@@ -1,0 +1,44 @@
+.countryContainer{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    
+}
+/* .title{
+    position:absolute;
+    top: 10px;
+} */
+.countryList{
+    width: 50%;
+    height: 300px;
+    overflow-y: scroll;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+.item{
+    width: 200px;
+    padding: 10px;
+    background-color: inherit;
+    margin: 10px 0;
+    color: white;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.selected{
+    opacity: 1 !important;
+}
+.countryList::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+@media(max-width:600px){
+    .countryContainer{
+        width: 100%;
+        margin: 0 5%;
+    }
+    .countryList{
+        width: 40%;
+        height: 350px;
+    }
+}

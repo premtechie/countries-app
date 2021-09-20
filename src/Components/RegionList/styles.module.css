@@ -1,0 +1,54 @@
+.mainContainer{
+    width: 100%;
+    display: flex;
+    /* justify-content: space-between; */
+}
+.regionContainer{
+    width: 30%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 14px;
+}
+.listItem {
+    width: 100px;
+    padding: 10px;
+    background: gray;
+    margin: 10px;
+    color:white;
+    cursor: pointer;
+
+}
+.america{
+    background-color: rgba(20, 110, 255, 1);
+}
+.asia{
+    background-color: rgba(122, 20, 255, 1);
+}
+.africa{
+    background-color: rgba(251, 20, 255, 1);
+}
+.europe{
+    background-color:rgba(0, 158, 32, 1);
+}
+.oceania{
+    background-color: rgba(23, 25, 54, 1);
+}
+
+@media(max-width:600px){
+    .mainContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .regionContainer{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .listItem{
+        width: 80px;
+    }
+}
