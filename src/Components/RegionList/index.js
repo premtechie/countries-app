@@ -11,9 +11,9 @@ function RegionList(props) {
     const [selectedCountry,setCountry] = useState({})
 
     function fetchData(key){
-        axios.get(`https://restcountries.eu/rest/v2/region/${key}`)
+        if(selectedCountry.country !== key){axios.get(`https://restcountries.eu/rest/v2/region/${key}`)
         .then((res)=>{
-            console.log(res.data)
+            console.log(selectedCountry)
             setSelectedCountry(res.data)
             let color;
             if(key === "Americas"){
@@ -26,7 +26,7 @@ function RegionList(props) {
                 color = "rgba(0, 158, 32, 1)";
             }
             else if(key === "Africa"){
-                color = "rgba(251, 20, 255, 1)";
+                color = "rgba(91, 36, 79, 1)";
             }
             else if(key === "Oceania"){
                 color = "rgba(23, 25, 54, 1)";
@@ -36,14 +36,15 @@ function RegionList(props) {
                 country:key,
                 color
             })
-        })
+        })}
     }
 
 
     return (
+        <>
+        <div className={styles.titleName}>Select Region</div>
         <div className={styles.mainContainer}>
             <div className={styles.regionContainer}>
-                {/* <div>Select Region</div> */}
                 {
                     regionList && regionList.map((list,i)=>(
                         <div 
@@ -56,7 +57,7 @@ function RegionList(props) {
                                 {[styles.africa] : list === "Africa"},
                                 {[styles.oceania] : list === "Oceania"}
                                 )}
-                        >
+                            >
                             {list}
                         </div>
                     ))
@@ -64,6 +65,7 @@ function RegionList(props) {
             </div>
             <CountryList selectedCountry={selectedCountry} countryList = {selectedCountryList} />
         </div>
+        </>
     )
 }
 

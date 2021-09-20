@@ -22,7 +22,8 @@
     background-color: inherit;
     margin: 10px 0;
     color: white;
-    opacity: 0.5;
+    opacity: 0.6;
+    border-radius: 7px;
     cursor: pointer;
 }
 .selected{
@@ -40,5 +41,8 @@
     .countryList{
         width: 40%;
         height: 350px;
+    }
+    .item{
+        width: 125px;
     }
 }

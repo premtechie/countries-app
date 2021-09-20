@@ -5,7 +5,7 @@ import RegionList from './Components/RegionList';
 function App() {
   return (
     <div className="App">
-      <div>
+      <div className = 'wrapper' >
         <RegionList />
       </div>
     </div>
